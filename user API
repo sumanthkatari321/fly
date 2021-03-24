@@ -1,0 +1,101 @@
+GET /users
+[
+  {
+    "id": 1,
+    "username": "sumanth_katari",
+    "name": "sumanth",
+    "state": "active",
+    "avatar_url": "http://localhost:3000/uploads/user/avatar/1/cd8.jpeg",
+    "web_url": "http://localhost:3000/sumanth_katari"
+  },
+  {
+    "id": 2,
+    "username": "smith_ks",
+    "name": "Smith",
+    "state": "blocked",
+    "avatar_url": "http://gravatar.com/../e32131cd8.jpeg",
+    "web_url": "http://localhost:3000/smith_ks"
+  }
+]
+GET /users?username=:username
+GET /users?username=_ks
+GET /users?active=true
+
+GET /users?blocked=true
+GET /users?external=true
+GET /users?exclude_internal=true
+GET /users?exclude_external=true
+GET /users
+
+Attribute	Type	Required	Description
+order_by	string	no	Return users ordered by id, name, username, created_at, or updated_at fields. Default is id
+sort	string	no	Return users sorted in asc or desc order. Default is desc
+two_factor	string	no	Filter users by Two-factor authentication. Filter values are enabled or disabled. By default it returns all users
+without_projects	boolean	no	Filter users without projects. Default is false, which means that all users are returned, with and without projects.
+admins	boolean	no	Return only admin users. Default is false
+[
+  {
+    "id": 1,
+    "username": "sumanth_katari",
+    "email": "sumanth@example.com",
+    "name": "Smith_ks",
+    "state": "active",
+    "avatar_url": "http://localhost:3000/uploads/user/avatar/1/index.jpg",
+    "web_url": "http://localhost:3000/sumanth_katari",
+    "created_at": "2012-05-23T08:00:58Z",
+    "is_admin": false,
+    "bio": "",
+    "bio_html": "",
+    "location": null,
+    "skype": "",
+    "linkedin": "",
+    "twitter": "",
+    "website_url": "",
+    "organization": "",
+    "job_title": "",
+    "last_sign_in_at": "2012-06-01T11:41:01Z",
+    "confirmed_at": "2012-05-23T09:05:22Z",
+    "theme_id": 1,
+    "last_activity_on": "2012-05-23",
+    "color_scheme_id": 2,
+    "projects_limit": 100,
+    "current_sign_in_at": "2012-06-02T06:36:55Z",
+    
+    "identities": [
+      {"provider": "github", "extern_uid": "2435223452345"},
+      {"provider": "bitbucket", "extern_uid": "sumanth.katari"},
+      {"provider": "google_oauth2", "extern_uid": "8776128412476123468721346"}
+    ],
+    "can_create_group": true,
+    "can_create_project": true,
+    "two_factor_enabled": true,
+    "external": false,
+    "private_profile": false,
+    "current_sign_in_ip": "196.165.1.102",
+    "last_sign_in_ip": "172.127.2.22"
+  },
+  {
+  [
+  {
+    "id": 1,
+    ...
+    "shared_runners_minutes_limit": 133,
+    "extra_shared_runners_minutes_limit": 133,
+    "using_license_seat": true
+    ...
+  }
+]
+[
+  {
+    "id": 1,
+    ...
+    "identities": [
+      {"provider": "github", "extern_uid": "2435223452345"},
+      {"provider": "bitbucket", "extern_uid": "sumanth.katari"},
+      {"provider": "google_oauth2", "extern_uid": "8776128412476123468721346"},
+      {"provider": "group_saml", "extern_uid": "123789", "saml_provider_id": 10}
+    ],
+    ...
+  }
+]
+GET /users?extern_uid=:extern_uid&provider=:provider
